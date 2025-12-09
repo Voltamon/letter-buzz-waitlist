@@ -288,18 +288,48 @@ const Pricing = () => {
                   <TableHeader>
                     <TableRow>
                       <TableHead className="w-1/4 font-bold text-foreground">Feature</TableHead>
-                      <TableHead className="text-center font-bold text-foreground">Starter</TableHead>
-                      <TableHead className="text-center font-bold text-foreground bg-primary/5">Professional</TableHead>
-                      <TableHead className="text-center font-bold text-foreground">Enterprise</TableHead>
+                      <TableHead className={`text-center font-bold transition-colors duration-300 ${
+                        selectedPlan === "Starter" 
+                          ? "text-primary bg-primary/10" 
+                          : "text-foreground"
+                      }`}>
+                        Starter
+                      </TableHead>
+                      <TableHead className={`text-center font-bold transition-colors duration-300 ${
+                        selectedPlan === "Professional" 
+                          ? "text-primary bg-primary/10" 
+                          : "text-foreground"
+                      }`}>
+                        Professional
+                      </TableHead>
+                      <TableHead className={`text-center font-bold transition-colors duration-300 ${
+                        selectedPlan === "Enterprise" 
+                          ? "text-primary bg-primary/10" 
+                          : "text-foreground"
+                      }`}>
+                        Enterprise
+                      </TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {comparisonFeatures.map((feature, index) => (
                       <TableRow key={index}>
                         <TableCell className="font-medium">{feature.category}</TableCell>
-                        <TableCell className="text-center">{renderCell(feature.starter)}</TableCell>
-                        <TableCell className="text-center bg-primary/5">{renderCell(feature.professional)}</TableCell>
-                        <TableCell className="text-center">{renderCell(feature.enterprise)}</TableCell>
+                        <TableCell className={`text-center transition-colors duration-300 ${
+                          selectedPlan === "Starter" ? "bg-primary/10" : ""
+                        }`}>
+                          {renderCell(feature.starter)}
+                        </TableCell>
+                        <TableCell className={`text-center transition-colors duration-300 ${
+                          selectedPlan === "Professional" ? "bg-primary/10" : ""
+                        }`}>
+                          {renderCell(feature.professional)}
+                        </TableCell>
+                        <TableCell className={`text-center transition-colors duration-300 ${
+                          selectedPlan === "Enterprise" ? "bg-primary/10" : ""
+                        }`}>
+                          {renderCell(feature.enterprise)}
+                        </TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
@@ -309,7 +339,12 @@ const Pricing = () => {
               {/* Mobile Cards */}
               <div className="md:hidden space-y-4 sm:space-y-6">
                 {pricingPlans.map((plan) => (
-                  <div key={plan.name} className="bg-card border rounded-lg p-4 sm:p-6">
+                  <div 
+                    key={plan.name} 
+                    className={`bg-card border-2 rounded-lg p-4 sm:p-6 transition-colors duration-300 ${
+                      selectedPlan === plan.name ? "border-primary bg-primary/5" : "border-border"
+                    }`}
+                  >
                     <h3 className="text-lg sm:text-xl font-bold mb-4 text-center pb-3 border-b">
                       {plan.name}
                     </h3>
