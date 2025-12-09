@@ -200,7 +200,7 @@ const CTA = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-32 relative overflow-hidden bg-gradient-to-br from-[hsl(240,2%,13%)]/5 via-background to-background">
+    <section ref={sectionRef} className="py-32 relative overflow-hidden bg-background">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-[hsl(16,78%,49%)] rounded-full blur-3xl" />
