@@ -146,11 +146,26 @@ Gruvbox color palette:
     @apply border-border;
   }
 
+  /* Smooth scrolling optimizations */
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     font-family: var(--font-sans);
     letter-spacing: -0.011em;
+    overflow-x: hidden;
+    overscroll-behavior-y: none;
+  }
+
+  /* GPU acceleration for smoother performance */
+  #root {
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -177,24 +192,35 @@ Gruvbox color palette:
   .backface-hidden {
     backface-visibility: hidden;
   }
+
+  /* Scroll performance utilities */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform;
+  }
+
+  .smooth-scroll {
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 /* Animations */
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translateY(0px) translateZ(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-10px) translateZ(0);
   }
 }
 
 @keyframes float-delayed {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translateY(0px) translateZ(0);
   }
   50% {
-    transform: translateY(-15px);
+    transform: translateY(-15px) translateZ(0);
   }
 }
 
@@ -209,11 +235,13 @@ Gruvbox color palette:
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+  will-change: transform;
 }
 
 .animate-float-delayed {
   animation: float-delayed 8s ease-in-out infinite;
   animation-delay: 2s;
+  will-change: transform;
 }
 
 .animate-gradient {
