@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
+import Navbar from "@/components/landing/Navbar";
 import Index from "./pages/Index";
 import IntegrationsPage from "./pages/Integrations";
 import Pricing from "./pages/Pricing";
@@ -25,6 +26,7 @@ const App = () => {
         <Sonner />
         <HoverReceiver />
         <BrowserRouter>
+          <Navbar />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/pricing" element={<Pricing />} />
