@@ -99,6 +99,10 @@ const setupGuides = [
       {
         step: "Configure Settings",
         description: "Set import frequency (daily/weekly) and choose whether to import future posts automatically"
+      },
+      {
+        step: "Start Generating",
+        description: "Your RSS feed is now synced. LetterBuzz analyzes your content history and begins generating personalized draft suggestions."
       }
     ]
   }
