@@ -35,15 +35,6 @@ export const FlowingMenu = ({
     if (activeElement) {
       const { offsetLeft, offsetWidth } = activeElement;
       setIndicatorStyle({ left: offsetLeft, width: offsetWidth });
-      
-      // Auto-scroll to active item on mobile
-      if (containerRef.current && window.innerWidth < 768) {
-        activeElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'nearest',
-          inline: 'center'
-        });
-      }
     }
   };
 
@@ -68,15 +59,14 @@ export const FlowingMenu = ({
     <div 
       ref={containerRef}
       className={cn(
-        "relative flex items-center gap-1 md:gap-2 bg-card border border-border rounded-full p-1.5 md:p-2",
-        "overflow-x-auto scrollbar-hide w-full max-w-full",
-        "touch-pan-x",
+        "relative flex items-center justify-between bg-card border border-border rounded-full",
+        "w-full p-1 md:p-2 gap-0.5 md:gap-1",
         className
       )}
     >
       {/* Flowing background indicator */}
       <motion.div
-        className="absolute h-[calc(100%-12px)] md:h-[calc(100%-16px)] bg-primary rounded-full"
+        className="absolute h-[calc(100%-8px)] md:h-[calc(100%-16px)] bg-primary rounded-full"
         initial={false}
         animate={{
           left: indicatorStyle.left,
@@ -99,23 +89,23 @@ export const FlowingMenu = ({
             ref={(el) => (itemRefs.current[index] = el)}
             onClick={() => onItemClick(item.id)}
             className={cn(
-              "relative z-10 rounded-full transition-colors duration-300 font-medium whitespace-nowrap flex-shrink-0",
-              "px-3 py-2 text-xs md:px-6 md:py-3 md:text-base",
+              "relative z-10 rounded-full transition-colors duration-300 font-medium flex-1",
+              "px-2 py-1.5 text-[10px] md:px-6 md:py-3 md:text-base",
               "active:scale-95 transition-transform",
               isActive 
                 ? "text-primary-foreground" 
                 : "text-foreground hover:text-foreground/80"
             )}
           >
-            <span className="flex items-center gap-1.5 md:gap-2">
+            <span className="flex items-center justify-center gap-1 md:gap-2">
               <span className={cn(
-                "font-mono text-[10px] md:text-xs",
+                "font-mono text-[9px] md:text-xs",
                 isActive ? "text-primary-foreground/70" : "text-muted-foreground"
               )}>
                 {item.number}
               </span>
-              <span className="hidden sm:inline">{item.label}</span>
-              <span className="sm:hidden">{item.label.split(' ')[0]}</span>
+              <span className="hidden sm:inline truncate">{item.label}</span>
+              <span className="sm:hidden truncate">{item.label.split(' ')[0]}</span>
             </span>
           </button>
         );
