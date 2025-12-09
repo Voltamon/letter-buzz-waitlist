@@ -1,4 +1,3 @@
-import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
 import { Check, X } from "lucide-react";
@@ -214,7 +213,6 @@ const Pricing = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
       <main className="relative">
         {/* Pricing Header Section */}
         <section className="container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-32 pb-12 sm:pb-16 md:pb-20 relative bg-gradient-to-br from-[hsl(16,78%,49%)]/5 via-background to-background">
