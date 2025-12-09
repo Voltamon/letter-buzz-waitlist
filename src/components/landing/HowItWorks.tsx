@@ -197,13 +197,15 @@ const HowItWorks = () => {
             From import to publish in four simple steps. No technical knowledge required.
           </p>
           
-          {/* Flowing Menu */}
-          <div ref={menuRef} className="flex justify-center">
-            <FlowingMenu
-              items={menuItems}
-              activeItem={`step-${activeStep}`}
-              onItemClick={handleMenuClick}
-            />
+          {/* Flowing Menu - Fixed overflow container */}
+          <div ref={menuRef} className="w-full flex justify-center px-4 md:px-0">
+            <div className="w-full max-w-full md:max-w-fit overflow-x-auto scrollbar-hide">
+              <FlowingMenu
+                items={menuItems}
+                activeItem={`step-${activeStep}`}
+                onItemClick={handleMenuClick}
+              />
+            </div>
           </div>
         </div>
 
