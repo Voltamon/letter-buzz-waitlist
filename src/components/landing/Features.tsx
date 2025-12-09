@@ -8,121 +8,121 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const featureItems: AccordionItem[] = [
+{
+  id: "archive",
+  title: "Archive Import",
+  image: "https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=800&q=80",
+  content: [
   {
-    id: "archive",
-    title: "Archive Import",
-    image: "https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=800&q=80",
-    content: [
-      {
-        heading: "Seamless Integration",
-        description: "Connect your Substack, Beehiiv, or any RSS feed in seconds. We handle the heavy lifting."
-      },
-      {
-        heading: "Instant Analysis",
-        description: "Your entire content history is analyzed immediately to identify patterns and opportunities."
-      },
-      {
-        heading: "Universal Compatibility",
-        description: "Works with all major newsletter platforms and custom RSS feeds."
-      }
-    ]
+    heading: "Seamless Integration",
+    description: "Connect your Substack, Beehiiv, or any RSS feed in seconds. We handle the heavy lifting."
   },
   {
-    id: "topic",
-    title: "Topic Discovery",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-    content: [
-      {
-        heading: "AI-Powered Insights",
-        description: "AI analyzes patterns in your content to suggest topics your audience craves."
-      },
-      {
-        heading: "Trend Identification",
-        description: "Discover emerging trends and topics before they become mainstream."
-      },
-      {
-        heading: "Audience Alignment",
-        description: "Get topic suggestions that align with your unique voice and audience preferences."
-      }
-    ]
+    heading: "Instant Analysis",
+    description: "Your entire content history is analyzed immediately to identify patterns and opportunities."
   },
   {
-    id: "analytics",
-    title: "Engagement Analytics",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-    content: [
-      {
-        heading: "Deep Reader Insights",
-        description: "Deep insights into what resonates with your readers and drives engagement."
-      },
-      {
-        heading: "Performance Metrics",
-        description: "Track opens, clicks, and conversions with detailed analytics dashboards."
-      },
-      {
-        heading: "Content Optimization",
-        description: "Learn which topics, formats, and styles generate the best results."
-      }
-    ]
+    heading: "Universal Compatibility",
+    description: "Works with all major newsletter platforms and custom RSS feeds."
+  }]
+
+},
+{
+  id: "topic",
+  title: "Topic Discovery",
+  image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+  content: [
+  {
+    heading: "AI-Powered Insights",
+    description: "AI analyzes patterns in your content to suggest topics your audience craves."
   },
   {
-    id: "drafts",
-    title: "Markdown Drafts",
-    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
-    content: [
-      {
-        heading: "SEO-Optimized Content",
-        description: "Get SEO-optimized drafts ready to publish. Export in clean markdown format for any platform."
-      },
-      {
-        heading: "Platform Flexibility",
-        description: "Export to Substack, Ghost, Medium, or any markdown-compatible platform."
-      },
-      {
-        heading: "Edit-Ready Format",
-        description: "Clean, structured markdown that's easy to edit and customize to your style."
-      }
-    ]
+    heading: "Trend Identification",
+    description: "Discover emerging trends and topics before they become mainstream."
   },
   {
-    id: "generation",
-    title: "Quick Generation",
-    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80",
-    content: [
-      {
-        heading: "Lightning Fast",
-        description: "From analysis to draft in under 60 seconds. No more staring at blank screens."
-      },
-      {
-        heading: "Smart Suggestions",
-        description: "AI-generated content that matches your tone and writing style perfectly."
-      },
-      {
-        heading: "Ready to Publish",
-        description: "Get publication-ready drafts that need minimal editing before sending."
-      }
-    ]
+    heading: "Audience Alignment",
+    description: "Get topic suggestions that align with your unique voice and audience preferences."
+  }]
+
+},
+{
+  id: "analytics",
+  title: "Engagement Analytics",
+  image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+  content: [
+  {
+    heading: "Deep Reader Insights",
+    description: "Deep insights into what resonates with your readers and drives engagement."
   },
   {
-    id: "growth",
-    title: "Growth Focus",
-    image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80",
-    content: [
-      {
-        heading: "Subscriber Growth",
-        description: "Every suggestion is optimized for subscriber growth and retention."
-      },
-      {
-        heading: "Retention Strategies",
-        description: "Keep your existing subscribers engaged with content they love."
-      },
-      {
-        heading: "Conversion Optimization",
-        description: "Turn casual readers into loyal subscribers with data-driven content strategies."
-      }
-    ]
-  }
-];
+    heading: "Performance Metrics",
+    description: "Track opens, clicks, and conversions with detailed analytics dashboards."
+  },
+  {
+    heading: "Content Optimization",
+    description: "Learn which topics, formats, and styles generate the best results."
+  }]
+
+},
+{
+  id: "drafts",
+  title: "Markdown Drafts",
+  image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+  content: [
+  {
+    heading: "SEO-Optimized Content",
+    description: "Get SEO-optimized drafts ready to publish. Export in clean markdown format for any platform."
+  },
+  {
+    heading: "Platform Flexibility",
+    description: "Export to Substack, Ghost, Medium, or any markdown-compatible platform."
+  },
+  {
+    heading: "Edit-Ready Format",
+    description: "Clean, structured markdown that's easy to edit and customize to your style."
+  }]
+
+},
+{
+  id: "generation",
+  title: "Quick Generation",
+  image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80",
+  content: [
+  {
+    heading: "Lightning Fast",
+    description: "From analysis to draft in under 60 seconds. No more staring at blank screens."
+  },
+  {
+    heading: "Smart Suggestions",
+    description: "AI-generated content that matches your tone and writing style perfectly."
+  },
+  {
+    heading: "Ready to Publish",
+    description: "Get publication-ready drafts that need minimal editing before sending."
+  }]
+
+},
+{
+  id: "growth",
+  title: "Growth Focus",
+  image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80",
+  content: [
+  {
+    heading: "Subscriber Growth",
+    description: "Every suggestion is optimized for subscriber growth and retention."
+  },
+  {
+    heading: "Retention Strategies",
+    description: "Keep your existing subscribers engaged with content they love."
+  },
+  {
+    heading: "Conversion Optimization",
+    description: "Turn casual readers into loyal subscribers with data-driven content strategies."
+  }]
+
+}];
+
 
 const Features = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -140,11 +140,11 @@ const Features = () => {
           start: "top 80%",
           end: "top 50%",
           toggleActions: "play none none reverse",
-          scrub: 0.5, // Smooth scroll-linked animation
+          scrub: 0.5 // Smooth scroll-linked animation
         },
         opacity: 0,
         y: 20,
-        ease: "power2.out",
+        ease: "power2.out"
       });
 
       gsap.from(headingRef.current, {
@@ -153,11 +153,11 @@ const Features = () => {
           start: "top 80%",
           end: "top 50%",
           toggleActions: "play none none reverse",
-          scrub: 0.5,
+          scrub: 0.5
         },
         opacity: 0,
         y: 30,
-        ease: "power2.out",
+        ease: "power2.out"
       });
 
       gsap.from(descriptionRef.current, {
@@ -166,11 +166,11 @@ const Features = () => {
           start: "top 80%",
           end: "top 50%",
           toggleActions: "play none none reverse",
-          scrub: 0.5,
+          scrub: 0.5
         },
         opacity: 0,
         y: 20,
-        ease: "power2.out",
+        ease: "power2.out"
       });
 
       // Accordion entrance animation - lighter and smoother
@@ -180,11 +180,11 @@ const Features = () => {
           start: "top 85%",
           end: "top 65%",
           toggleActions: "play none none reverse",
-          scrub: 0.5,
+          scrub: 0.5
         },
         opacity: 0,
         y: 40,
-        ease: "power2.out",
+        ease: "power2.out"
       });
     });
 
@@ -192,7 +192,7 @@ const Features = () => {
   }, []);
 
   return (
-    <section id="features" ref={sectionRef} className="pt-8 md:pt-16 pb-2 md:pb-4 bg-gradient-to-br from-[hsl(186,47%,63%)]/5 via-background to-background relative overflow-hidden">
+    <section id="features" ref={sectionRef} className="pt-8 md:pt-16 pb-2 md:pb-4 bg-gradient-to-br from-[hsl(186,47%,63%)]/5 via-background to-background relative overflow-hidden !w-[99.9%] !h-[910px]">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-2xl mb-1 md:mb-2">
           <p ref={badgeRef} className="text-sm font-medium text-[hsl(186,47%,63%)] uppercase tracking-wider mb-2">Features</p>
@@ -208,8 +208,8 @@ const Features = () => {
           <FeatureAccordion items={featureItems} defaultOpen="archive" />
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default Features;
