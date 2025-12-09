@@ -133,18 +133,18 @@ const Features = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Scroll-triggered animations for header
+      // Optimized scroll-triggered animations with smoother settings
       gsap.from(badgeRef.current, {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 80%",
           end: "top 50%",
           toggleActions: "play none none reverse",
+          scrub: 0.5, // Smooth scroll-linked animation
         },
         opacity: 0,
-        y: 30,
-        duration: 0.8,
-        ease: "power3.out",
+        y: 20,
+        ease: "power2.out",
       });
 
       gsap.from(headingRef.current, {
@@ -153,12 +153,11 @@ const Features = () => {
           start: "top 80%",
           end: "top 50%",
           toggleActions: "play none none reverse",
+          scrub: 0.5,
         },
         opacity: 0,
-        y: 50,
-        duration: 1,
-        ease: "power3.out",
-        delay: 0.2,
+        y: 30,
+        ease: "power2.out",
       });
 
       gsap.from(descriptionRef.current, {
@@ -167,27 +166,25 @@ const Features = () => {
           start: "top 80%",
           end: "top 50%",
           toggleActions: "play none none reverse",
+          scrub: 0.5,
         },
         opacity: 0,
-        y: 30,
-        duration: 0.8,
-        ease: "power3.out",
-        delay: 0.4,
+        y: 20,
+        ease: "power2.out",
       });
 
-      // Accordion entrance animation
+      // Accordion entrance animation - lighter and smoother
       gsap.from(accordionRef.current, {
         scrollTrigger: {
           trigger: accordionRef.current,
           start: "top 85%",
-          end: "top 60%",
+          end: "top 65%",
           toggleActions: "play none none reverse",
+          scrub: 0.5,
         },
         opacity: 0,
-        y: 60,
-        scale: 0.95,
-        duration: 1.2,
-        ease: "power3.out",
+        y: 40,
+        ease: "power2.out",
       });
     });
 
