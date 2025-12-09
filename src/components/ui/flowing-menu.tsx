@@ -68,9 +68,9 @@ export const FlowingMenu = ({
     <div 
       ref={containerRef}
       className={cn(
-        "relative inline-flex items-center gap-1 md:gap-2 bg-card border border-border rounded-full p-1.5 md:p-2",
-        "overflow-x-auto scrollbar-hide max-w-full",
-        "touch-pan-x snap-x snap-mandatory",
+        "relative flex items-center gap-1 md:gap-2 bg-card border border-border rounded-full p-1.5 md:p-2",
+        "overflow-x-auto scrollbar-hide w-full max-w-full",
+        "touch-pan-x",
         className
       )}
     >
@@ -99,7 +99,7 @@ export const FlowingMenu = ({
             ref={(el) => (itemRefs.current[index] = el)}
             onClick={() => onItemClick(item.id)}
             className={cn(
-              "relative z-10 rounded-full transition-colors duration-300 font-medium whitespace-nowrap snap-center flex-shrink-0",
+              "relative z-10 rounded-full transition-colors duration-300 font-medium whitespace-nowrap flex-shrink-0",
               "px-3 py-2 text-xs md:px-6 md:py-3 md:text-base",
               "active:scale-95 transition-transform",
               isActive 
