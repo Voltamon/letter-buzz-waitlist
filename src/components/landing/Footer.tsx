@@ -32,9 +32,7 @@ const Footer = () => {
         <div ref={contentRef} className="flex flex-col items-center gap-6">
           {/* Brand */}
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">LB</span>
-            </div>
+            <img src="/logo.png" alt="LetterBuzz Logo" className="w-8 h-8" />
             <span className="font-semibold">LetterBuzz</span>
           </div>
           

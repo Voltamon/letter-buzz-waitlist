@@ -205,7 +205,7 @@ const Hero = () => {
             </p>
 
             <div ref={buttonsRef} className="flex flex-wrap gap-4">
-              <Button size="lg" className="group bg-[hsl(16,78%,49%)] hover:bg-[hsl(16,78%,45%)]" asChild>
+              <Button size="lg" className="group bg-[https://letterbuzz.vercel.app/] hover:bg-[hsl(16,78%,45%)]" asChild>
                 <a href="https://tally.so/r/xXrAzG" target="_blank" rel="noopener noreferrer">
                   Join waitlist
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
