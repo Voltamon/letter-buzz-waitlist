@@ -264,8 +264,8 @@ const CTA = () => {
                 </div>
                 
                 <div className="flex items-start gap-4 md:gap-5">
-                  <div className="w-9 h-9 md:w-10 md:h-10 bg-[hsl(186,47%,63%)]/10 flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-[hsl(186,47%,63%)] text-base">✓</span>
+                  <div className="w-9 h-9 md:w-10 md:h-10 bg-[hsl(16,78%,49%)]/10 flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-[hsl(16,78%,49%)] text-base">✓</span>
                   </div>
                   <div>
                     <p className="font-medium text-base md:text-lg">Export anywhere</p>
@@ -274,8 +274,8 @@ const CTA = () => {
                 </div>
                 
                 <div className="flex items-start gap-4 md:gap-5">
-                  <div className="w-9 h-9 md:w-10 md:h-10 bg-[hsl(42,88%,63%)]/10 flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-[hsl(42,88%,63%)] text-base">✓</span>
+                  <div className="w-9 h-9 md:w-10 md:h-10 bg-[hsl(16,78%,49%)]/10 flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-[hsl(16,78%,49%)] text-base">✓</span>
                   </div>
                   <div>
                     <p className="font-medium text-base md:text-lg">Cancel anytime</p>
