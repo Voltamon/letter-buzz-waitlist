@@ -242,12 +242,11 @@ const CTA = () => {
                 </p>
                 
                 <div ref={buttonsRef} className="flex flex-wrap gap-4 md:gap-5">
-                  <Button size="lg" className="group text-base bg-[hsl(16,78%,49%)] hover:bg-[hsl(16,78%,45%)]">
-                    Start for free
-                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                  <Button variant="outline" size="lg" className="text-base border-[hsl(16,78%,49%)]/30 hover:bg-[hsl(16,78%,49%)]/10">
-                    Schedule demo
+                  <Button size="lg" className="group text-base bg-[hsl(16,78%,49%)] hover:bg-[hsl(16,78%,45%)]" asChild>
+                    <a href="https://tally.so/r/xXrAzG" target="_blank" rel="noopener noreferrer">
+                      Join waitlist
+                      <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </a>
                   </Button>
                 </div>
               </div>

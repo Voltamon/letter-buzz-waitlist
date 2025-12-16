@@ -3,7 +3,6 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { Link } from "react-router-dom";
 
 const Hero = () => {
   const badgeRef = useRef<HTMLDivElement>(null);
@@ -207,13 +206,10 @@ const Hero = () => {
 
             <div ref={buttonsRef} className="flex flex-wrap gap-4">
               <Button size="lg" className="group bg-[hsl(16,78%,49%)] hover:bg-[hsl(16,78%,45%)]" asChild>
-                <Link to="/login?mode=signup">
-                  Start analyzing
+                <a href="https://tally.so/r/xXrAzG" target="_blank" rel="noopener noreferrer">
+                  Join waitlist
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
-              <Button variant="outline" size="lg" className="border-[hsl(16,78%,49%)]/30 hover:bg-[hsl(16,78%,49%)]/10">
-                View demo
+                </a>
               </Button>
             </div>
 

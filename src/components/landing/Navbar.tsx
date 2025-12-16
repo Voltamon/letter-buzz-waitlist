@@ -8,8 +8,6 @@ import { Menu } from "lucide-react";
 
 const tabs: NavItem[] = [
   { id: "home", label: "Home", href: "/" },
-  { id: "pricing", label: "Pricing", href: "/pricing" },
-  { id: "integrations", label: "Integrations", href: "/integrations" },
 ];
 
 const Navbar = () => {
@@ -21,7 +19,6 @@ const Navbar = () => {
   const buttonsRef = useRef<HTMLDivElement>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Determine active tab based on current route
   const activeTab = useMemo(() => {
     const currentPath = location.pathname;
     const matchedTab = tabs.find(tab => tab.href === currentPath);
@@ -35,7 +32,6 @@ const Navbar = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Initial load animations
       gsap.from(logoRef.current, {
         opacity: 0,
         x: -30,
@@ -61,20 +57,17 @@ const Navbar = () => {
         delay: 0.6,
       });
 
-      // Navbar scroll effect
       let lastScroll = 0;
       const handleScroll = () => {
         const currentScroll = window.scrollY;
         
         if (currentScroll > lastScroll && currentScroll > 100) {
-          // Scrolling down
           gsap.to(navRef.current, {
             y: -100,
             duration: 0.3,
             ease: "power2.inOut",
           });
         } else {
-          // Scrolling up
           gsap.to(navRef.current, {
             y: 0,
             duration: 0.3,
@@ -102,12 +95,10 @@ const Navbar = () => {
           <span className="font-semibold text-base sm:text-lg tracking-tight">LetterBuzz</span>
         </div>
         
-        {/* Desktop Card Nav */}
         <div ref={navItemsRef} className="hidden md:block flex-shrink-0">
           <CardNav items={tabs} defaultActive={activeTab} />
         </div>
 
-        {/* Mobile Menu Button */}
         <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
           <SheetTrigger asChild>
             <Button variant="ghost" size="sm" className="md:hidden p-2">
@@ -134,24 +125,17 @@ const Navbar = () => {
                 </button>
               ))}
               <div className="border-t border-border pt-4 mt-2 flex flex-col gap-2">
-                <Button variant="outline" className="w-full" asChild>
-                  <Link to="/login">Sign in</Link>
-                </Button>
                 <Button className="w-full" asChild>
-                  <Link to="/login?mode=signup">Get Started</Link>
+                  <a href="https://tally.so/r/xXrAzG" target="_blank" rel="noopener noreferrer">Join waitlist</a>
                 </Button>
               </div>
             </div>
           </SheetContent>
         </Sheet>
 
-        {/* Desktop Buttons */}
         <div ref={buttonsRef} className="hidden md:flex items-center gap-2 sm:gap-3 flex-shrink-0">
-          <Button variant="ghost" size="sm" asChild>
-            <Link to="/login">Sign in</Link>
-          </Button>
           <Button size="sm" className="text-xs sm:text-sm px-3 sm:px-4" asChild>
-            <Link to="/login?mode=signup">Get Started</Link>
+            <a href="https://tally.so/r/xXrAzG" target="_blank" rel="noopener noreferrer">Join waitlist</a>
           </Button>
         </div>
       </nav>
