@@ -18,8 +18,10 @@ export const PostHogProvider = ({ children }: PostHogProviderProps) => {
         capture_pageview: true, // Automatically capture pageviews
         capture_pageleave: true, // Capture when users leave pages
         // Use reverse proxy in production to avoid ad-blockers
-        api_host: import.meta.env.PROD ? '/ingest' : host,
-        ui_host: import.meta.env.PROD ? 'https://us.i.posthog.com' : undefined,
+        // In production, use custom domain with /ingest path
+        // In development, use the configured PostHog host
+        api_host: import.meta.env.PROD ? 'https://letterbuzz.news/ingest' : host,
+        ui_host: 'https://us.i.posthog.com',
         loaded: (posthog) => {
           if (import.meta.env.DEV) {
             console.log('PostHog initialized successfully');
