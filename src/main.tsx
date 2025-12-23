@@ -1,6 +1,7 @@
 import { createRoot } from 'react-dom/client';
 import App from "./App.tsx";
 import "./index.css";
+import { PostHogProvider } from "./components/PostHogProvider";
 
 if (typeof window !== "undefined") {
   const sendToParent = (data: any) => {
@@ -8,7 +9,7 @@ if (typeof window !== "undefined") {
       if (window.parent && window.parent !== window) {
         window.parent.postMessage(data, "*");
       }
-    } catch {}
+    } catch { }
   };
 
   window.addEventListener("error", (event) => {
@@ -61,4 +62,8 @@ if (typeof window !== "undefined") {
   });
 }
 
-createRoot(document.getElementById("root")!).render(<App />);
+createRoot(document.getElementById("root")!).render(
+  <PostHogProvider>
+    <App />
+  </PostHogProvider>
+);
