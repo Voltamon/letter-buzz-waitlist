@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { BackgroundBeams } from "@/components/ui/background-beams";
+import WaitlistForm from "./WaitlistForm";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
@@ -140,10 +141,10 @@ const Hero = () => {
         { ref: card2Ref.current, scale: 1.08, z: 60 },
         { ref: card3Ref.current, scale: 1.08, z: 60 }
       ];
-      
+
       cards.forEach(({ ref, scale, z }) => {
         if (!ref) return;
-        
+
         ref.addEventListener("mouseenter", () => {
           gsap.to(ref, {
             scale,
@@ -171,7 +172,7 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-background">
       {/* Background Beams */}
       <BackgroundBeams />
-      
+
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background z-0" />
 
@@ -179,15 +180,15 @@ const Hero = () => {
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           {/* Left Content - Asymmetric */}
           <div className="lg:col-span-7 space-y-8">
-            <div 
+            <div
               ref={badgeRef}
               className="inline-flex items-center gap-2 px-4 py-2 bg-card border border-[hsl(16,78%,49%)]/30 text-sm"
             >
               <Sparkles className="w-4 h-4 text-[hsl(16,78%,49%)]" />
               <span className="text-muted-foreground">AI-Powered Newsletter Analytics</span>
             </div>
-            
-            <h1 
+
+            <h1
               ref={headingRef}
               className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]"
             >
@@ -195,37 +196,19 @@ const Hero = () => {
               <span className="block text-[hsl(16,78%,49%)]">newsletter</span>
               <span className="block">with AI insights</span>
             </h1>
-            
-            <p 
+
+            <p
               ref={descriptionRef}
               className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed"
             >
-              Analyze your Substack, Beehiiv, or RSS archives. Get AI-powered topic suggestions 
+              Analyze your Substack, Beehiiv, or RSS archives. Get AI-powered topic suggestions
               and SEO-optimized drafts that drive audience engagement.
             </p>
 
-            <div ref={buttonsRef} className="flex flex-wrap gap-4">
-              <Button size="lg" className="group bg-[https://letterbuzz.vercel.app/] hover:bg-[hsl(16,78%,45%)]" asChild>
-                <a href="https://tally.so/r/xXrAzG" target="_blank" rel="noopener noreferrer">
-                  Join waitlist
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </Button>
-            </div>
-
-            {/* Stats Row */}
-            <div ref={statsRef} className="flex flex-wrap gap-12 pt-8 pb-8 md:pb-0 border-t border-[hsl(16,78%,49%)]/20">
-              <div>
-                <p className="text-3xl font-bold text-[hsl(16,78%,49%)]">10K+</p>
-                <p className="text-sm text-muted-foreground">Newsletters analyzed</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-[hsl(16,78%,49%)]">45%</p>
-                <p className="text-sm text-muted-foreground">Avg. engagement boost</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-[hsl(16,78%,49%)]">2M+</p>
-                <p className="text-sm text-muted-foreground">Drafts generated</p>
+            {/* Waitlist Form Section with Line */}
+            <div ref={statsRef} className="pt-8 pb-8 md:pb-0 border-t border-[hsl(16,78%,49%)]/20">
+              <div ref={buttonsRef} className="w-full max-w-xl">
+                <WaitlistForm variant="hero" className="max-w-xl" />
               </div>
             </div>
           </div>
@@ -233,7 +216,7 @@ const Hero = () => {
           {/* Right Content - Enhanced Floating Cards */}
           <div className="lg:col-span-5 relative h-[500px] hidden lg:block" style={{ perspective: '1500px' }}>
             {/* Card 1 - Top */}
-            <div 
+            <div
               ref={card1Ref}
               className="absolute top-0 right-0 w-72 bg-card border border-[hsl(16,78%,49%)]/30 p-6 shadow-2xl cursor-pointer will-change-transform"
               style={{ transformStyle: 'preserve-3d' }}
@@ -264,7 +247,7 @@ const Hero = () => {
             </div>
 
             {/* Card 2 - Middle */}
-            <div 
+            <div
               ref={card2Ref}
               className="absolute top-1/3 left-0 w-64 bg-card border border-[hsl(16,78%,49%)]/30 p-5 shadow-2xl cursor-pointer will-change-transform"
               style={{ transformStyle: 'preserve-3d' }}
@@ -277,7 +260,7 @@ const Hero = () => {
             </div>
 
             {/* Card 3 - Bottom */}
-            <div 
+            <div
               ref={card3Ref}
               className="absolute bottom-0 right-12 w-60 bg-card border border-[hsl(16,78%,49%)]/30 p-5 shadow-2xl cursor-pointer will-change-transform"
               style={{ transformStyle: 'preserve-3d' }}
